@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+// 这段代码用于创建一个倒计时功能。
+function startCountdown() {
+    var seconds = 10; // 倒计时开始的秒数
+    var display = document.getElementById('timer'); // 获取页面上用于显示倒计时的元素
+
+    var countdown = setInterval(function() {
+        display.textContent = seconds + ' seconds remaining'; // 显示剩余时间
+        seconds--; // 每次调用减少1秒
+
+        if (seconds < 0) {
+            clearInterval(countdown); // 当倒计时结束时清除定时器
+            display.textContent = 'Congrats!'; // 显示结束语
+        }
+    }, 1000); // setInterval的时间间隔设置为1000毫秒（1秒）
+}
+</script>
+</head>
+<body>
+<button onclick="startCountdown()">Start Countdown</button> <!-- 开始倒计时的按钮 -->
+<div id="timer"></div> <!-- 显示倒计时的元素 -->
+</body>
+</html>
